@@ -5,3 +5,4 @@ Objective: This C program is meant to be a Guess the Number game, where our prog
 Sources: 
    -One of the sources i used was my KS_GuessingGame.java which i made for my CS141 class
    -I used this one Youtube video from Bro Code link: https://youtu.be/maVv62OPjPs?si=cTsdbcG8Ch6UpmTg
+   -I also looked at Geeks for Geeks link: https://www.geeksforgeeks.org/number-guessing-game-in-c/

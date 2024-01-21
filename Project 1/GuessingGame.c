@@ -13,8 +13,13 @@
 #include <time.h>
 
 int main() {
+    const int MIN = 1;
+    const int MAX = 100;
     int guessingNumber;
     int guessMade;
 
+    srand(time(0));
+    guessingNumber = (rand() % MAX) + MIN;
+    printf("%d", guessingNumber);
     return 0;
 }
