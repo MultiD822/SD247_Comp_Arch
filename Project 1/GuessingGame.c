@@ -15,11 +15,38 @@
 int main() {
     const int MIN = 1;
     const int MAX = 100;
+    //difficultyLevel()
+    int guessCounter;
     int guessingNumber;
     int guessMade;
 
     srand(time(0));
     guessingNumber = (rand() % MAX) + MIN;
-    printf("%d", guessingNumber);
+    
+    do{
+        printf("Enter a Guess \t");
+        scanf("%d", &guessMade);
+        if (guessMade > guessingNumber)
+        {
+            /* code */
+            printf("to big\n");
+            printf("Your Guess made is great than the random number\n");
+        }
+        else if (guessMade < guessingNumber)
+        {
+            /* code */
+            printf("to small\n");
+            printf("Your Guess made is less than the random number\n");
+        }
+        else {
+            printf("Your got the right Number good Job!\n");
+        }
+        guessCounter++;
+    }while (guessMade != guessingNumber);
+    printf("[]=======================[]\n");
+    printf("[] Guessing Number: %d   []\n", guessingNumber);
+    printf("[] Guessing Number: %d    []\n", guessCounter);
+    printf("[]=======================[]\n");
+
     return 0;
 }
