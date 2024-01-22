@@ -14,8 +14,8 @@
 
 int main() {
     const int MIN = 1;
-    const int MAX = 100;
-    //difficultyLevel()
+    gameIntro();
+    int MAX = difficultyLevel();
     int guessCounter;
     int guessingNumber;
     int guessMade;
@@ -24,29 +24,77 @@ int main() {
     guessingNumber = (rand() % MAX) + MIN;
     
     do{
-        printf("Enter a Guess \t");
+        printf("[]============================[]\n");
+        printf("[] Enter a Guess \t");
         scanf("%d", &guessMade);
+        printf("[]============================[]\n");
+        printf("\n");
         if (guessMade > guessingNumber)
         {
             /* code */
-            printf("to big\n");
-            printf("Your Guess made is great than the random number\n");
+            printf("[]====================================================[]\n");
+            printf("[] The guess you made is great than the random number []\n");
+            printf("[]====================================================[]\n");
+            printf("\n");
         }
         else if (guessMade < guessingNumber)
         {
             /* code */
-            printf("to small\n");
-            printf("Your Guess made is less than the random number\n");
+            printf("[]===================================================[]\n");
+            printf("[] The guess you made is less than the random number []\n");
+            printf("[]===================================================[]\n");
+            printf("\n");
         }
         else {
-            printf("Your got the right Number good Job!\n");
+            printf("[]===================================================[]\n");
+            printf("[] Your got the right Number good Job!               []\n");
+            printf("[]===================================================[]\n");
+            printf("\n");
         }
         guessCounter++;
     }while (guessMade != guessingNumber);
     printf("[]=======================[]\n");
     printf("[] Guessing Number: %d   []\n", guessingNumber);
-    printf("[] Guessing Number: %d    []\n", guessCounter);
+    printf("[] Guessing Number: %d   []\n", guessCounter);
     printf("[]=======================[]\n");
 
     return 0;
+}
+
+int difficultyLevel() {
+    char difficultyInput;
+    int MAX;
+    printf("Enter the Difficulty Level you wish to play with: (E) for Easy, (M) for Medium, (H) for Hard \n");
+    printf("Select ->  ");
+    scanf("%c", &difficultyInput);
+    difficultyInput = toupper(difficultyInput);
+    switch (difficultyInput)
+    {
+    case 'E'/* Easy difficulty */:
+        /* code */
+        MAX = 100;
+        break;
+    
+    case 'M'/* Medium difficulty */:
+        /* code */
+        MAX = 200;
+        break;
+
+    case 'H'/* Hard difficulty */:
+        /* code */
+        MAX = 300;
+        break;    
+    default:
+        break;
+    }
+    return MAX;
+}
+
+void gameIntro(){
+    printf("[]==========================================================================[]\n");
+    printf("[] Wellcome to the Nubmer Guessing Game, The computer will grenert a random []\n");
+    printf("[] number from 1 to the level of difficulty that you will select from.      []\n");
+    printf("[] Easy is 1 to 100, Medium is 1 to 200, and Hard is 1 to 300               []\n");
+    printf("[]==========================================================================[]\n");
+    printf("\n");
 }
