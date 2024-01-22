@@ -14,15 +14,22 @@
 
 int main() {
     const int MIN = 1;
+    //Print intro
     gameIntro();
+
+    //Setting the difficulty of the game
     int MAX = difficultyLevel();
+    //Setting int vars to then have values stored in
     int guessCounter;
     int guessingNumber;
     int guessMade;
 
+    //Making the random number to then guess on
     srand(time(0));
     guessingNumber = (rand() % MAX) + MIN;
     
+    //This do while loop will always need at least one guess to be right and if it is not eqaul to the
+    //Guessing number we do everything in the do scoop again
     do{
         printf("[]===============[]\n");
         printf("[] Enter a Guess []\n");
@@ -64,6 +71,7 @@ int main() {
 }
 
 int difficultyLevel() {
+    //Setting a char var to be the input of the difficulty 
     char difficultyInput;
     int MAX;
     printf("[]==============================================================================================[]\n");
@@ -71,7 +79,9 @@ int difficultyLevel() {
     printf("[]==============================================================================================[]\n");
     printf("Select ->  ");
     scanf("%c", &difficultyInput);
+    //cast what ever char to be the upper case version of the char
     difficultyInput = toupper(difficultyInput);
+    //Have this swtich case instead of a if else tower 
     switch (difficultyInput)
     {
     case 'E'/* Easy difficulty */:
@@ -99,6 +109,8 @@ void gameIntro() {
     printf("[] Wellcome to the Nubmer Guessing Game, The computer will grenert a random []\n");
     printf("[] number from 1 to the level of difficulty that you will select from.      []\n");
     printf("[] Easy is 1 to 100, Medium is 1 to 200, and Hard is 1 to 300               []\n");
+    printf("[] Then when you enter a guess the computer will tell you if your guess is  []\n");
+    printf("[] less than or greater than the number you are trying to guess.            []\n");
     printf("[]==========================================================================[]\n");
     printf("\n");
 }
