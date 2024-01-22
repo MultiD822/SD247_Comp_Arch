@@ -24,10 +24,12 @@ int main() {
     guessingNumber = (rand() % MAX) + MIN;
     
     do{
-        printf("[]============================[]\n");
-        printf("[] Enter a Guess \t");
-        scanf("%d", &guessMade);
-        printf("[]============================[]\n");
+        printf("[]===============[]\n");
+        printf("[] Enter a Guess []\n");
+        printf("[]===============[]\n");
+        printf("Guess ->  ");
+        scanf("%d", &guessMade); 
+        
         printf("\n");
         if (guessMade > guessingNumber)
         {
@@ -64,7 +66,9 @@ int main() {
 int difficultyLevel() {
     char difficultyInput;
     int MAX;
-    printf("Enter the Difficulty Level you wish to play with: (E) for Easy, (M) for Medium, (H) for Hard \n");
+    printf("[]==============================================================================================[]\n");
+    printf("[] Enter the Difficulty Level you wish to play with: (E) for Easy, (M) for Medium, (H) for Hard []\n");
+    printf("[]==============================================================================================[]\n");
     printf("Select ->  ");
     scanf("%c", &difficultyInput);
     difficultyInput = toupper(difficultyInput);
