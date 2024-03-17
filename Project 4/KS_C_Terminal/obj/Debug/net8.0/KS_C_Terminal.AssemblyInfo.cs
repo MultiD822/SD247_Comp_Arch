@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KS_C_Terminal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce31e56406e187bfd6d9da333fc395e41f731e42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7bace7d38b565a13d57c4ae0996da814fde3e4d")]
 [assembly: System.Reflection.AssemblyProductAttribute("KS_C_Terminal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KS_C_Terminal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
