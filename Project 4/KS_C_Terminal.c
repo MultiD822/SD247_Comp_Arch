@@ -13,27 +13,78 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <time.h>
 
+//Help Function that print out all the Commond
+// printf("[] Enter (COMMOND) ______________________________________________ []\n");
+void help_Function(){
+    printf("[]================================================================[]\n");
+    printf("[] Enter (math) to then add two numbers and get there sum back    []\n");
+    printf("[] Enter (pwd) ______________________________________________ []\n");
+    printf("[] Enter (ls) ______________________________________________ []\n");
+    printf("[] Enter (COMMOND) ______________________________________________ []\n");
+    printf("[] Enter (COMMOND) ______________________________________________ []\n");
+    printf("[] Enter (COMMOND) ______________________________________________ []\n");
+    printf("[]================================================================[]\n");
+}
+
+//Need a Math function so if the user want to some number calutaion
+void calculation_Factory()
+{
+    int a, b;
+    printf("Enter two numbers separated by a space; ");
+    scanf("%d %d", &a, &b);
+    printf("Sum: %d\n", a + b);
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF)
+    {
+        /* code */
+    }
+    
+}
 //Need a Function that is for (pwd) Print Working Directory this will prints the full pathname of the current working directory
-
+void print_Working_Directory(){
+    char current_Working_Directory[1024];
+    if (getcwd(current_Working_Directory, sizeof(current_Working_Directory)) != NULL) {
+        printf("Current working directory: %s\n", current_Working_Directory);
+    } else {
+        perror("getcwd() error");
+    }
+    
+}
 //Need a Function for (ls) List without any arguments this will list the files and directories in the current directory
+void list_Files() {
+    system("ls");
+}
 
-
+//Excute a commond 
+void excute_Command(char* incomeing_Argument){
+    if(strcmp(incomeing_Argument, "math") == 0){
+        calculation_Factory();
+    } else if (strcmp(incomeing_Argument, "help") == 0){
+        help_Function();
+    }
+    
+}
 
 //The Main where all thing run from
 int main () 
 {
     //The array of char that make or great String 
     char incomeing_Argument[100];
-    
-    while (1)
+
+    printf("[]=========================================[]\n");
+    printf("[]  Hello this is my Terminal Menu where   []\n");
+    printf("[]  You can run commands like get the      []\n");
+    printf("[]  List or or Print Working Directory     []\n");
+    printf("[]  or Encryption or Decryption of a file  []\n");
+    printf("[]=========================================[]\n");
+
+
+    while (1) //Start of the loop might change the 1 into the perment var
     {   
-        printf("[]=========================================[]\n");
-        printf("[]  Hello this is my Terminal Menu where   []\n");
-        printf("[]  You can run commands like get the      []\n");
-        printf("[]  List or or Print Working Directory     []\n");
-        printf("[]  or Encryption or Decryption of a file  []\n");
-        printf("[]=========================================[]\n");
+        
         //Show that computer is waiting for prompt
         printf(">> "); 
         
@@ -48,7 +99,7 @@ int main ()
             //Breck out of the while loop so we are not here for ever
             break;
         }
-        
+        excute_Command(incomeing_Argument);
     }
     
 
