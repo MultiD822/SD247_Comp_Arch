@@ -32,3 +32,4 @@ After compilation, you can run the application by navigating to the bin director
 cd bin
 ./KS_C_Terminal 
 ```
+Also make Test file in local scope of the project so the terminal can read and write
