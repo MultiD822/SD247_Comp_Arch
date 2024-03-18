@@ -32,9 +32,10 @@ void help_Function(){
     printf("[] Enter (ls) to list files and directories in the current directory []\n");
     printf("[] Enter (rename) to change the name of a file                       []\n");
     printf("[] Enter (read) to display the contents of a file                    []\n");
+    printf("[] Enter (time) show currnet time                                    []\n");
     printf("[] Enter (write) to create a new file or overwrite an existing one   []\n");
     printf("[] Enter (quit/exit) to exit the terminal application                []\n");
-    printf("[]==================================================================[]\n");
+    printf("[]===================================================================[]\n");
 }
 
 
@@ -343,6 +344,8 @@ void excute_Command(char* incomeing_Argument){
         scanf("%99s", target_File);
 
         decrypt_File(source_File_Name, target_File, the_Key);
+    } else if (strcmp(incomeing_Argument, "time") == 0){
+        show_Time();
     }
     
 }
